@@ -38,7 +38,7 @@ This stage is to help people clone the reposistory to remote desktop
 
 	Red "M" means file has been modified in remote repo
 
-	Green "M" meanes file is in sync with rep
+	Green "M" means file is in sync with rep
 
 4) git add *filename1* *filename2* *filenameN*
 
