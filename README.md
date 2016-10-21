@@ -38,3 +38,4 @@ This stage is to help people clone the reposistory to remote desktop
 
 6) git push -u origin master
 
+This is the end of the second stage.
