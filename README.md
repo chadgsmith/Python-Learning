@@ -16,7 +16,7 @@ This is the end of the first stage.
 
 #Stage 002
 
-This stage is to help people clone the reposistory to remote desktop
+This stage is to help people clone the reposistory to remote desktop and upload changes or new files
 
 1) git clone https://github.com/chadgsmith/Python-Learning
 
