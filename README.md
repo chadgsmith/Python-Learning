@@ -21,15 +21,23 @@ This stage is to help people clone the reposistory to remote desktop
 1) git clone https://github.com/chadgsmith/Python-Learning
 
 2) git status
+
 	On branch master
+
 	Your branch is up-to-date with 'origin/master'.
+
 	nothing to commit, working directory clean
 
 3) git status -s
+
 	shows the current files in remote repository
+
 	?? means file is not in repo
+
 	"A" means file has been added to queue, waiting on commit
+
 	Red "M" means file has been modified in remote repo
+
 	Green "M" meanes file is in sync with rep
 
 4) git add *filename1* *filename2* *filenameN*
