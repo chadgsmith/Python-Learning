@@ -18,7 +18,7 @@ for y in range(0,4):
 	for x in range(0,20):
 	    print "\n"
         matrix[0][pos] = '__'
-        matrix[y-1][pos] = '__'
+        if y != 0 : matrix[y-1][pos] = '__'
         matrix[y][pos] = '\033[1;37;41m%s\033[1;m' % ('__')
 	print ' ','  '.join(str(x) for x in xrange(1,col+1))
 	for rows in range(row):	
