@@ -17,6 +17,8 @@ class Board:
 				tmp += ' ' + str(self.matrix[rows][columns])
 			print tmp
 #main
+
+# Game is 7 cols by 6 rows
 column = 5
 row = 4
 board = Board(column,row) #the __init__ func runs here
