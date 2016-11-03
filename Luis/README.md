@@ -1,16 +1,3 @@
 #location to store versions of master
 
-  1  2  3  4  5  6  7
-
-|__|__|__|__|__|__|__|
-
-|__|__|__|__|__|__|__|
-
-|__|__|__|__|__|__|__|
-
-|__|__|__|__|__|__|__|
-
-|__|__|__|__|__|__|__|
-
-|__|__|__|__|__|__|__|
-
+![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Board_Luis.py)
