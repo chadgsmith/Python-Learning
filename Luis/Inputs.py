@@ -19,7 +19,7 @@ def init_board(col = 7, row = 6):
 			tmp += '|' + str(matrix[rows][columns])
 		print tmp+'|'
 	print '#'.join('#' for x in xrange(1,13))
-	print "  Lets Play 4 Square"
+	print "Lets Play connect 4"
 	print '#'.join('#' for x in xrange(1,13))
 
 def get_players(num):
