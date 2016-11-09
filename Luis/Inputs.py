@@ -1,25 +1,22 @@
 def init_board(col = 7, row = 6):
 	matrix = [['__']*col for i in range(row)]
-	matrix[5][4] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[4][4] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[3][4] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[2][4] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[1][4] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[0][4] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[1][3] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[2][2] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[3][1] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[3][2] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[3][3] = '\033[1;37;41m%s\033[1;m' % ('__')
-	matrix[3][5] = '\033[1;37;41m%s\033[1;m' % ('__')
+	#Color in the number 4
+	for a in range(0,6): #vertical
+		matrix[a][4] = '\033[1;37;41m%s\033[1;m' % ('__')
+	for b in range(1,4): # diagonal
+		matrix[b][4-b] = '\033[1;37;41m%s\033[1;m' % ('__')
+	for c in range(2,6): #horizontal
+		matrix[3][c] = '\033[1;37;41m%s\033[1;m' % ('__')
+	#Print the BOARD
 	print ' ','  '.join(str(x) for x in xrange(1,col+1))
 	for rows in range(row):	
 		tmp = ''
 		for columns in range(col):
 			tmp += '|' + str(matrix[rows][columns])
 		print tmp+'|'
+	#Print game message
 	print '#'.join('#' for x in xrange(1,13))
-	print '\033[1;31;40m%s\033[1;m' % ("Lets Play connect 4")
+	print '  \033[1;31m%s\033[1;m' % ("Lets Play connect 4")
 	print '#'.join('#' for x in xrange(1,13))
 
 def get_players(num):
