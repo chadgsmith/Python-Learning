@@ -34,3 +34,4 @@ if __name__ == '__main__':
 	player1 = get_players(1)
 	player2 = get_players(2)
 	print player1, player2
+	print '\033[1;37;41m%s\033[1;m' % 'GAME OVER'
