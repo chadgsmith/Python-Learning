@@ -26,9 +26,22 @@ def get_players(num):
 	if not player.isupper() : player = player.upper()
 	return player
 
+def check_color(clr):
+	
+
+def get_color(num):
+	prompt = '\nType in Player %s color, [Green, Red, Yellow or Blue]: ' % (str(num))
+	color = raw_input(prompt)
+		
+	return color
+
 if __name__ == '__main__':
 	init_board()
 	player1 = get_players(1)
 	player2 = get_players(2)
 	print player1, player2
+	player1c = get_color(1)
+	player2c = get_color(2)
+
 	print '\033[1;37;41m%s\033[1;m' % 'GAME OVER'
+	
