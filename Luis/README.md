@@ -18,11 +18,10 @@ Game
 <code>pip install XYZ</code></td>
 </table>
 
-'''
-
-some code
-
+'''some code
 '''
 
 ### test
  - test1
+
+\* testing
