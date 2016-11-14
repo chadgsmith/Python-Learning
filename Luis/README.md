@@ -10,12 +10,12 @@ Game
 
 <table>
 <tr>
-<td>Debian/Ubuntu:
-<td><code>sudo apt-get install build-essential python-dev pypy-dev libsnappy-dev</code>
+<td>Ubuntu:
+<td><code>sudo apt-get install XYZ</code>
 <tr>
 <td>OS X
-<td><code>brew install python pypy snappy</code></br>
-<code>pip install virtualenv</code></td>
+<td><code>brew install XYZ</code></br>
+<code>pip install XYZ</code></td>
 </table>
 
 '''
@@ -24,5 +24,5 @@ some code
 
 '''
 
-###test
- -test1
+### test
+ - test1
