@@ -43,10 +43,10 @@ def get_color(num):
 if __name__ == '__main__':
 	init_board()
 	player1 = get_players(1)
-	player1c,clr1 = get_color(1)
+	p1c,clr1 = get_color(1)
 	player2 = get_players(2)
-	player2c,clr2 = get_color(2)
+	p2c,clr2 = get_color(2)
 
-	print '\nP1 : %s : \033[1;37;4%sm%s\033[1;m \nP2 : %s : \033[1;37;4%sm%s\033[1;m' % (player1,clr1,player1c, player2,clr2, player2c)
+	print '\nP1 : %s : \033[1;37;4%sm%s\033[1;m \nP2 : %s : \033[1;37;4%sm%s\033[1;m' % (player1,clr1,p1c, player2,clr2, p2c)
 	print '\n\033[1;37;41m%s\033[1;m' % 'GAME OVER'
 	
