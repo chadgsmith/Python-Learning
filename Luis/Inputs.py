@@ -22,26 +22,31 @@ def init_board(col = 7, row = 6):
 def get_players(num):
 	prompt = '\nType in Player %s name: ' % str(num)
 	player = raw_input(prompt)
-	player = player.strip()
-	if not player.isupper() : player = player.upper()
+	player = player.strip().lower().capitalize()
 	return player
 
-def check_color(clr):
+def check_color(clr,num):
+	grid = ['Red', 'Green', 'Yellow','Blue']
+	color = clr.strip().lower().capitalize()
+	if color in grid:
+		return color, grid.index(color)+1
+	else:
+		get_color(num)			
 	
 
 def get_color(num):
-	prompt = '\nType in Player %s color, [Green, Red, Yellow or Blue]: ' % (str(num))
+	prompt = 'Type in Player %s color, [Red, Green, Yellow or Blue]: ' % (str(num))
 	color = raw_input(prompt)
-		
-	return color
+	color,typ = check_color(color,num)
+	return color,typ
 
 if __name__ == '__main__':
 	init_board()
 	player1 = get_players(1)
+	player1c,clr1 = get_color(1)
 	player2 = get_players(2)
-	print player1, player2
-	player1c = get_color(1)
-	player2c = get_color(2)
+	player2c,clr2 = get_color(2)
 
-	print '\033[1;37;41m%s\033[1;m' % 'GAME OVER'
+	print '\nP1 : %s : \033[1;37;4%sm%s\033[1;m \nP2 : %s : \033[1;37;4%sm%s\033[1;m' % (player1,clr1,player1c, player2,clr2, player2c)
+	print '\n\033[1;37;41m%s\033[1;m' % 'GAME OVER'
 	
