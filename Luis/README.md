@@ -6,7 +6,7 @@ Board
 
 Game
 
-![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/C4_Game_Init.png)
+![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Game_init.png)
 
 <table>
 <tr>
