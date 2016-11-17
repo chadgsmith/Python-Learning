@@ -25,19 +25,31 @@ def get_players(num):
 	player = player.strip().lower().capitalize()
 	return player
 
-def check_color(clr,num):
+def check_color(clr,num,p1clr):
 	grid = ['Red', 'Green', 'Yellow','Blue']
 	color = clr.strip().lower().capitalize()
 	if color in grid:
-		return color, grid.index(color)+1
+	    #print color,'2'
+	    for n in grid:
+		    if color == n:
+		        if (p1clr == None) or (color != p1clr):
+		            return color, grid.index(color)+1
+		        elif p1clr == color:
+		            print "pick a diff color"
+		            return get_color(num,p1clr)
 	else:
-		get_color(num)			
+	    print "color is mispelled"
+	    return get_color(num,p1clr)			
 	
 
-def get_color(num):
+def get_color(num,p1c=None):
 	prompt = 'Type in Player %s color, [Red, Green, Yellow or Blue]: ' % (str(num))
 	color = raw_input(prompt)
-	color,typ = check_color(color,num)
+	if color.strip().upper() == 'EXIT' : 
+	    import sys
+	    sys.exit()
+	color,typ = check_color(color,num,p1c)
+	#print typ
 	return color,typ
 
 if __name__ == '__main__':
@@ -45,7 +57,7 @@ if __name__ == '__main__':
 	player1 = get_players(1)
 	p1c,clr1 = get_color(1)
 	player2 = get_players(2)
-	p2c,clr2 = get_color(2)
+	p2c,clr2 = get_color(2,p1c)
 
 	print '\nP1 : %s : \033[1;37;4%sm%s\033[1;m \nP2 : %s : \033[1;37;4%sm%s\033[1;m' % (player1,clr1,p1c, player2,clr2, p2c)
 	print '\n\033[1;37;41m%s\033[1;m' % 'GAME OVER'
