@@ -8,6 +8,10 @@ Game
 
 ![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Game_init.png)
 
+Test
+
+![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Input_final_test.png)
+
 <table>
 <tr>
 <td>Ubuntu:
