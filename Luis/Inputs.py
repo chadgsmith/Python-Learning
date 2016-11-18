@@ -29,14 +29,12 @@ def check_color(clr,num,p1clr):
 	grid = ['Red', 'Green', 'Yellow','Blue']
 	color = clr.strip().lower().capitalize()
 	if color in grid:
-	    #print color,'2'
-	    for n in grid:
-		    if color == n:
-		        if (p1clr == None) or (color != p1clr):
-		            return color, grid.index(color)+1
-		        elif p1clr == color:
-		            print "pick a diff color"
-		            return get_color(num,p1clr)
+		#print color,'2'
+		if (p1clr == None) or (color != p1clr):
+			return color, grid.index(color)+1
+		elif p1clr == color:
+			print "pick a diff color"
+			return get_color(num,p1clr)
 	else:
 	    print "color is mispelled"
 	    return get_color(num,p1clr)			
