@@ -50,6 +50,7 @@ def get_color(num,p1c=None):
 	#print typ
 	return color,typ
 
+'''
 if __name__ == '__main__':
 	init_board()
 	player1 = get_players(1)
@@ -59,4 +60,6 @@ if __name__ == '__main__':
 
 	print '\nP1 : %s : \033[1;37;4%sm%s\033[1;m \nP2 : %s : \033[1;37;4%sm%s\033[1;m' % (player1,clr1,p1c, player2,clr2, p2c)
 	print '\n\033[1;37;41m%s\033[1;m' % 'GAME OVER'
+'''
+
 	
