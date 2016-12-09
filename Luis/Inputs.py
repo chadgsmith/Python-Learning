@@ -1,12 +1,15 @@
 def init_board(col = 7, row = 6):
 	matrix = [['__']*col for i in range(row)]
+	
 	#Color in the number 4
+	colorBlock = '\033[1;37;41m%s\033[1;m' % ('__')
 	for a in range(0,6): #vertical
-		matrix[a][4] = '\033[1;37;41m%s\033[1;m' % ('__')
+		matrix[a][4] = colorBlock
 	for b in range(1,4): # diagonal
-		matrix[b][4-b] = '\033[1;37;41m%s\033[1;m' % ('__')
+		matrix[b][4-b] = colorBlock
 	for c in range(2,6): #horizontal
-		matrix[3][c] = '\033[1;37;41m%s\033[1;m' % ('__')
+		matrix[3][c] = colorBlock
+		
 	#Print the BOARD
 	print ' ','  '.join(str(x) for x in xrange(1,col+1))
 	for rows in range(row):	
@@ -14,6 +17,7 @@ def init_board(col = 7, row = 6):
 		for columns in range(col):
 			tmp += '|' + str(matrix[rows][columns])
 		print tmp+'|'
+		
 	#Print game message
 	print '#'.join('#' for x in xrange(1,13))
 	print '  \033[1;31m%s\033[1;m' % ("Lets Play connect 4")
@@ -28,10 +32,10 @@ def get_players(num):
 def check_color(clr,num,p1clr):
 	grid = ['Red', 'Green', 'Yellow','Blue']
 	color = clr.strip().lower().capitalize()
+	
 	if color in grid:
-		#print color,'2'
 		if (p1clr == None) or (color != p1clr):
-			return color, grid.index(color)+1
+			return color
 		elif p1clr == color:
 			print "pick a diff color"
 			return get_color(num,p1clr)
@@ -46,10 +50,19 @@ def get_color(num,p1c=None):
 	if color.strip().upper() == 'EXIT' : 
 	    import sys
 	    sys.exit()
-	color,typ = check_color(color,num,p1c)
+	color = check_color(color,num,p1c)
 	#print typ
-	return color,typ
+	return color
 
+def set_colors():
+	grid = {}
+	grid['Red'] = '\033[1;37;41mRed\033[1;m'
+	grid['Green'] ='\033[1;37;42mGreen\033[1;m'
+	grid['Yellow'] = '\033[1;37;43mYellow\033[1;m'
+	grid['Blue'] = '\033[1;37;44mBlue\033[1;m'
+	return grid
+	
+	
 '''
 if __name__ == '__main__':
 	init_board()
