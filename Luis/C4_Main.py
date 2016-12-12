@@ -3,7 +3,7 @@ import Game
 
 if __name__ == '__main__':
 	######### Init ###############
-	'''
+	
 	I.init_board()
 	grid = I.set_colors()
 	name = {}
@@ -20,9 +20,24 @@ if __name__ == '__main__':
 	#str.replace("is", "was")
 	#In.init_board(grid[color[1]].replace(color[1],'__'))
 	#In.init_board(grid[color[2]].replace(color[2],'__'))
-	'''
+	
 	######### Game ###############
 	pos = {}
+	board = Game.set_board()
+	memBoard = Game.set_memBoard()
+	Game.print_board(board)
+	
 	pos[1] = Game.get_column(1)
+	board[5][int(pos[1])-1] = grid[color[1]].replace(color[1],'__')
+	Game.print_board(board)
+	memBoard[5][int(pos[1])-1] = '1'
+	
+	
 	pos[2] = Game.get_column(2)
+	board[5][int(pos[2])-1] = grid[color[2]].replace(color[2],'__')
+	Game.print_board(board)
+	memBoard[5][int(pos[2])-1] = '1'
+	
+	Game.print_board(memBoard)
+	
 	print pos
