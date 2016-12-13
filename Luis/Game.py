@@ -43,3 +43,14 @@ def get_row(matrix,column,row = 6):
 			return rows
 		else:
 			continue
+			
+'''
+>>> filled = 0
+>>> for col in range(7):
+...     if matrix[0][col] != '__':
+...             filled+=1
+... 
+>>> filled
+3
+>>> 
+'''
