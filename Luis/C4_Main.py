@@ -48,6 +48,9 @@ if __name__ == '__main__':
 		#play player2
 		pos['c2'] = int(Game.get_column(2))-1
 		pos['r2'] = Game.get_row(memBoard,pos['c2'])
+		if pos['r2'] == None:
+			print "Pick a new column"
+			continue
 		board[pos['r2']][pos['c2']] = chips[2]	
 		memBoard[pos['r2']][pos['c2']] = '2'
 		Game.print_board(board)
