@@ -1,0 +1,31 @@
+>>> for rows in range(row):
+...         tmp = ''
+...         for columns in range(col):
+...             tmp += '|' + str(matrix[rows][columns])
+...         print tmp+'|'
+... 
+|0|0|0|0|0|0|0|
+|0|0|0|0|0|0|0|
+|0|0|0|0|0|0|0|
+|0|0|0|0|0|0|0|
+|0|0|0|0|0|0|0|
+|1|1|1|2|0|0|0|
+
+for cols in range(4):
+    tmp += str(matrix[5][cols])
+
+>>> tmp = '1111'
+>>> if '2' not in tmp and '0' not in tmp: print tmp.count('1') >> 4
+
+>>> tmp = '1112'
+>>> if '2' not in tmp and '0' not in tmp: print tmp.count('1') >> 
+
+>>> tmp = '1110'
+>>> if '2' not in tmp and '0' not in tmp: print tmp.count('1') >> 
+
+>>> tmp = '1120'
+>>> if '2' not in tmp and '0' not in tmp: print tmp.count('1') >>
+
+
+
+
