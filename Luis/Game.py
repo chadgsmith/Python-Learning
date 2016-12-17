@@ -49,50 +49,11 @@ def get_winner(chckr,xmpt,block):
 	xmpt = str(xmpt)
 	if xmpt not in block and '0' not in block:
 		if block.count(chckr) == 4:
-			return True # Got 4 connected
-			
-#################
-#################
-def check_blocks(x,rnge,board,player,tmp):
-	block = ''
-	for y in rnge:
-		block+=board[x][y]
-	if get_winner(player,tmp,block) == True:
-		#print block,'(%s,%s)' % (str(x),str(y))
-		import sys
-		print 'Player %s WON!!!!!' % str(player)
-		sys.exit()
-
-def check_horizon(matrix,player,row=6):
-	if player == 1: exempt = 2
-	elif player == 2: exempt = 1 
-	for x in range(row):
-		rows = 5 - x
-		check_blocks(rows,range(0,4),matrix,player,exempt)
-		check_blocks(rows,range(1,5),matrix,player,exempt)
-		check_blocks(rows,range(2,6),matrix,player,exempt)
-		check_blocks(rows,range(3,7),matrix,player,exempt)
-################		
-def check_vblocks(rnge,y,board,player,tmp):
-	block = ''
-	for x in rnge:
-		block+=board[x][y]
-	if get_winner(player,tmp,block) == True:
-		#print block,'(%s,%s)' % (str(x),str(y))
-		import sys
-		print 'Player %s WON!!!!!' % str(player)
-		sys.exit()
-
-def check_vertical(matrix,player,col=7):
-	if player == 1: exempt = 2
-	elif player == 2: exempt = 1
-	for y in range(col):
-		check_vblocks(range(0,4),y,matrix,player,exempt)
-		check_vblocks(range(1,5),y,matrix,player,exempt)
-		check_vblocks(range(2,6),y,matrix,player,exempt)
-###############
-###############
-
+		    import sys
+		    print block
+		    print 'Player %s WON!!!!!' % (chckr)
+		    sys.exit()
+			#return True # Got 4 connected
 
 def get_row2(matrix):
 	filled = 0
@@ -101,40 +62,64 @@ def get_row2(matrix):
 			filled +=1
 	return filled
 
-
-'''
 #Horizontal
-for start in range(3):
-	start = 5 - start
-	block = ''
-	for y in range(0,4):
-		for k in range(4):
-			block+=board[start][k+y]
-		if get_winner(player,tmp,block) == True:
-		print '\n'
-
+def horizontal(matrix,player):
+    if player == 1: tmp = 2
+    elif player == 2: tmp = 1
+    for start in range(3):
+    	start = 5 - start
+    	for y in range(0,4):
+    	    blockh = ''
+    	    for k in range(4):
+    	        #print start,k+y
+    	        blockh+=matrix[start][k+y]
+            #print blockh
+            get_winner(player,tmp,blockh)
 #Vertical
-for y in range(0,7):
-	for start in range(0,3):
-		start = 5-start
-			for x in range(4):
-				print start-x,y
-			print '\n'
-		
+def vertical(matrix,player):
+    if player == 1: tmp = 2
+    elif player == 2: tmp = 1
+    for y in range(0,7):
+        blockv = ''
+        for start in range(0,3):
+            start = 5 - start
+            for x in range(4):
+                blockv+=matrix[start-x][y]
+            get_winner(player,tmp,blockv)
 #DIAGONAL Lup
-for start in range(0,3):
-	start = 5 - start
-	for y in range(4):
-		for x in range(4):
-			print start-x,x+y
-		print '\n set of blocks'
+def diagonal_up(matrix,player):
+    if player == 1: tmp = 2
+    elif player ==2: tmp = 1
+    for start in range(0,3):
+        start = 5 - start
+        for y in range(4):
+            blocku = ''
+            for x in range(4):
+                blocku+=matrix[start-x][x+y]
+            #print blocku
+            get_winner(player,tmp,blocku)
 
 #DIAGONAL Ldown, start at row 2 then 1 then 0
-for start in range(0,3):
-	start = 2-start
-	for y in range(4):      
-		for x in range(4):
-			print start+x,x+y
-		print '\n set of blocks'
+def diagonal_down(matrix,player):
+    if player ==1 : tmp = 2
+    elif player ==2: tmp = 1
+    for start in range(0,3):
+        start = 2-start
+        for y in range(4):
+            blockd = ''
+            for x in range(4):
+                blockd+=matrix[start+x][x+y]
+            get_winner(player,tmp,blockd)
+            
 
-'''
+
+
+
+
+
+
+
+
+
+
+

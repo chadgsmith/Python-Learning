@@ -48,9 +48,12 @@ if __name__ == '__main__':
 		#play player
 		Main(player)
 		move +=1	
-		if move > 8:
-			Game.check_horizon(memBoard,player)
-			Game.check_vertical(memBoard,player)
+		if move > 6:
+		    Game.horizontal(memBoard,player)
+		    if Game.get_row2(memBoard) > 0:
+		        Game.vertical(memBoard,player)
+		        Game.diagonal_up(memBoard,player)
+		        Game.diagonal_down(memBoard,player)
 		if player == 1 : player = 2
 		elif player == 2: player = 1
 	#end of code
