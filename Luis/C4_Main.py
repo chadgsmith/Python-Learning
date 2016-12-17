@@ -1,6 +1,19 @@
 import Inputs as I
 import Game 
 
+def Main(player):
+	column = 'c%s' % str(player)
+	row = 'r%s' % str(player)
+	pos[column] = int(Game.get_column(player))-1
+	pos[row] = Game.get_row(memBoard,pos[column])
+	if pos[row] == None:
+		print "Pick a new column"
+		Main(player)
+	board[pos[row]][pos[column]] = chips[player]
+	memBoard[pos[row]][pos[column]] = str(player)
+	Game.print_board(board)
+
+		
 if __name__ == '__main__':
 	######### Init ###############
 	name = {}
@@ -24,38 +37,40 @@ if __name__ == '__main__':
 	print 'P2 : %s : %s' % (name[2],grid[color[2]])
 	#print '\n\033[1;37;41m%s\033[1;m' % 'GAME OVER'
 	
-	#str.replace("is", "was")
-	#In.init_board(grid[color[1]].replace(color[1],'__'))
-	#In.init_board(grid[color[2]].replace(color[2],'__'))
-	
 	######### Game ###############
 	pos = {}
 	board = Game.set_board()
 	memBoard = Game.set_memBoard()
 	Game.print_board(board)
+	move = 0
+	player = 1
+	while True:
+		#play player
+		Main(player)
+		move +=1	
+		if move > 8:
+			Game.check_horizon(memBoard,player)
+			Game.check_vertical(memBoard,player)
+		if player == 1 : player = 2
+		elif player == 2: player = 1
+	#end of code
 	
-	while 1:
-		#play player1
-		pos['c1'] = int(Game.get_column(1))-1
-		pos['r1'] = Game.get_row(memBoard,pos['c1'])
-		if pos['r1'] == None:
-			print "Pick a new column"
-			continue
-		board[pos['r1']][pos['c1']] = chips[1]
-		memBoard[pos['r1']][pos['c1']] = '1'
-		Game.print_board(board)
-			
-		#play player2
-		pos['c2'] = int(Game.get_column(2))-1
-		pos['r2'] = Game.get_row(memBoard,pos['c2'])
-		if pos['r2'] == None:
-			print "Pick a new column"
-			continue
-		board[pos['r2']][pos['c2']] = chips[2]	
-		memBoard[pos['r2']][pos['c2']] = '2'
-		Game.print_board(board)
 	
-		#Game.print_board(memBoard)
 	
-	print pos
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
