@@ -29,3 +29,44 @@ for cols in range(4):
 
 
 
+#################
+#################
+def check_blocks(x,rnge,board,player,tmp):
+	block = ''
+	for y in rnge:
+		block+=board[x][y]
+	if get_winner(player,tmp,block) == True:
+		#print block,'(%s,%s)' % (str(x),str(y))
+		import sys
+		print 'Player %s WON!!!!!' % str(player)
+		sys.exit()
+
+def check_horizon(matrix,player,row=6):
+	if player == 1: exempt = 2
+	elif player == 2: exempt = 1 
+	for x in range(row):
+		rows = 5 - x
+		check_blocks(rows,range(0,4),matrix,player,exempt)
+		check_blocks(rows,range(1,5),matrix,player,exempt)
+		check_blocks(rows,range(2,6),matrix,player,exempt)
+		check_blocks(rows,range(3,7),matrix,player,exempt)
+################		
+def check_vblocks(rnge,y,board,player,tmp):
+	block = ''
+	for x in rnge:
+		block+=board[x][y]
+	if get_winner(player,tmp,block) == True:
+		#print block,'(%s,%s)' % (str(x),str(y))
+		import sys
+		print 'Player %s WON!!!!!' % str(player)
+		sys.exit()
+
+def check_vertical(matrix,player,col=7):
+	if player == 1: exempt = 2
+	elif player == 2: exempt = 1
+	for y in range(col):
+		check_vblocks(range(0,4),y,matrix,player,exempt)
+		check_vblocks(range(1,5),y,matrix,player,exempt)
+		check_vblocks(range(2,6),y,matrix,player,exempt)
+###############
+###############
