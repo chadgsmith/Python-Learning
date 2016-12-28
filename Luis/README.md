@@ -2,15 +2,15 @@
 
 Board
 
-![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Board.png)
+![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Pictures/Board.png)
 
 Game
 
-![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Game_init.png)
+![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Pictures/Game_init.png)
 
 Test
 
-![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Input_final_test.png)
+![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Pictures/Input_final_test.png)
 
 <table>
 <tr>
