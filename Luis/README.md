@@ -10,7 +10,6 @@ Game
 
 Test
 
-![alt tag](https://github.com/chadgsmith/Python-Learning/blob/master/Luis/Pictures/Input_final_test.png)
 
 <table>
 <tr>
